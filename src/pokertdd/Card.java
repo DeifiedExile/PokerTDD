@@ -10,19 +10,19 @@ package pokertdd;
  * @author Lucas Wolfs <lwolfs@my.wctc.edu>
  */
 public class Card {
-    private String power;
+    private int power;
     private String suit;
-    public Card(String power, String suit)
+    public Card(int power, String suit)
     {
         this.power = power;
         this.suit = suit;
     }
 
-    public String getPower() {
+    public int getPower() {
         return power;
     }
 
-    public void setPower(String power) {
+    public void setPower(int power) {
         this.power = power;
     }
 

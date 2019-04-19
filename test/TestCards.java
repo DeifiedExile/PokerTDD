@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import pokertdd.Card;
+import pokertdd.Deck;
 import pokertdd.Hand;
 
 /**
@@ -19,27 +20,31 @@ import pokertdd.Hand;
  */
 public class TestCards {
     Card card;
+    Hand hand;
+    Deck deck;
     public TestCards() {
     }
   
     @Before
     public void setUp() {
-        String power = "2";
+        int power = 2;
         String suit = "Clubs";
         card = new Card(power, suit);
+        hand = new Hand();
+        deck = new Deck();
+    }
+
+    @Test
+    public void canGenerateRandomCard()
+    {
+        deck.drawCard();
     }
     @Test
-    public void canCreateHand()
+    public void canDrawHand()
     {
-        Hand hand = new Hand();
+        hand.drawHand(deck);
     }
-    @Test
-    public void canGetCardInfo()
-    {
-        
-        assertEquals("wrong","2", card.getPower());
-        assertEquals("wrong", "Clubs", card.getSuit());
-    }
+    
     
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
