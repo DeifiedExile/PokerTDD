@@ -17,6 +17,10 @@ public class Deck {
     private List<Card> deckList = new ArrayList<Card>();
     Random rand = new Random();
     
+    
+    /**
+     * Constructor for Deck. Populates a 52 card deck with 13 cards for each suit, 1-10, jack, queen, king.
+     */
     public Deck()
     {
         for(int i = 0; i < 13; i++)
@@ -29,6 +33,11 @@ public class Deck {
                     
         }
     }
+    
+    /**
+     * selects a random card from the deck and returns it whilst simultaneously removing if from the deck
+     * @return Card object
+     */
     public Card drawCard()
     {
         //System.out.println("" + deckList.size());

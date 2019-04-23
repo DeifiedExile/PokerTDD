@@ -44,6 +44,15 @@ public class TestCards {
     {
         hand.drawHand(deck);
     }
+    @Test
+    public void canGetCardsInHad()
+    {
+        for(Card c : hand.getCardsInHand())
+        {
+            assertEquals(c.getClass(), Card.class);
+            assertTrue(c instanceof Card);
+        }
+    }
     
     
     // TODO add test methods here.
