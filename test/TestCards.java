@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -79,6 +80,26 @@ public class TestCards {
     {
         
         assertEquals("wrong", true, tester.checkStraight(hand.getCardsInHand()));
+    }
+    
+    @Test
+    public void canCheckRoyalFlush()
+    {
+        assertEquals("wrong", true, tester.checkRoyalFlush(hand.getCardsInHand()));
+    }
+    
+    @Test
+    public void canCheckOfAKind()
+    {
+        List<Card> cards = new ArrayList<Card>();
+        cards.add(new Card(1, "Hearts"));
+        cards.add(new Card(1, "Clubs"));
+        cards.add(new Card(2, "Spades"));
+        cards.add(new Card(2, "Diamonds"));
+        cards.add(new Card(3, "Spades"));
+        
+        assertEquals("wrong", 3, tester.checkOfAKind(cards));
+        
     }
     
     
