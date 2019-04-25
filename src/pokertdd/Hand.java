@@ -25,6 +25,10 @@ public class Hand {
         {
             cardsInHand.add(deck.drawCard());
         }
+//        for(Card c : cardsInHand)
+//        {
+//            System.out.println(c.getSuit() + " " + c.getPower());
+//        }
     }
     
     

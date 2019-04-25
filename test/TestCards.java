@@ -4,15 +4,18 @@
  * and open the template in the editor.
  */
 
+import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Ignore;
 import pokertdd.Card;
 import pokertdd.Deck;
 import pokertdd.Hand;
+import pokertdd.HandTester;
 
 /**
  *
@@ -22,6 +25,7 @@ public class TestCards {
     Card card;
     Hand hand;
     Deck deck;
+    HandTester tester;
     public TestCards() {
     }
   
@@ -32,6 +36,8 @@ public class TestCards {
         card = new Card(power, suit);
         hand = new Hand();
         deck = new Deck();
+        tester = new HandTester();
+        hand.drawHand(deck);
     }
 
     @Test
@@ -39,11 +45,13 @@ public class TestCards {
     {
         deck.drawCard();
     }
+    @Ignore
     @Test
     public void canDrawHand()
     {
         hand.drawHand(deck);
     }
+    
     @Test
     public void canGetCardsInHad()
     {
@@ -51,7 +59,26 @@ public class TestCards {
         {
             assertEquals(c.getClass(), Card.class);
             assertTrue(c instanceof Card);
+           // System.out.println(c.toString());
         }
+        
+    }
+    
+
+    
+    @Test
+    public void canCheckFlush()
+    {       
+        assertEquals("wrong", true, tester.checkHand(hand.getCardsInHand()));
+    }
+    
+    
+
+    @Test
+    public void canCheckStraight()
+    {
+        
+        assertEquals("wrong", true, tester.checkStraight(hand.getCardsInHand()));
     }
     
     

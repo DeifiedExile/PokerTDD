@@ -9,7 +9,7 @@ package pokertdd;
  *
  * @author Lucas Wolfs <lwolfs@my.wctc.edu>
  */
-public class Card {
+public class Card implements Comparable{
     private int power;
     private String suit;
     public Card(int power, String suit)
@@ -32,6 +32,28 @@ public class Card {
 
     public void setSuit(String suit) {
         this.suit = suit;
+    }
+    
+    public String toString()
+    {
+        return (this.getPower() + " " + this.getSuit());
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Card c2 = (Card)o;
+        if(this.getPower() >= c2.getPower())
+        {
+            return 1;
+        }
+        else if(this.getPower() <= c2.getPower())
+        {
+            return 0;
+        }
+        else
+        {
+            return -1;
+        }
     }
     
 }
