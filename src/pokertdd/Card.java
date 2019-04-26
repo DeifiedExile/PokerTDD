@@ -36,7 +36,22 @@ public class Card implements Comparable{
     
     public String toString()
     {
-        return (this.getPower() + " " + this.getSuit());
+        String faceValue = "";
+        switch(this.getPower())
+        {
+            case 13: 
+                faceValue = "King";
+                break;
+            case 12:
+                faceValue = "Queen";
+                break;
+            case 11:
+                faceValue = "Jack";
+                break;
+            default:
+                faceValue = Integer.toString(this.getPower());
+        }
+        return (faceValue + " " + this.getSuit());
     }
 
     @Override

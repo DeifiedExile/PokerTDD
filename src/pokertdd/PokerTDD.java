@@ -16,6 +16,15 @@ public class PokerTDD {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        Deck deck = new Deck();
+        Hand hand = new Hand();
+        HandTester tester = new HandTester();
+        
+        hand.drawHand(deck);
+        
+        System.out.println(tester.checkHand(hand.getCardsInHand()));
+        
     }
     
 }
