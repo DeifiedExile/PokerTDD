@@ -33,7 +33,10 @@ public class Card implements Comparable{
     public void setSuit(String suit) {
         this.suit = suit;
     }
-    
+    /**
+     * outputs card value to string
+     * @return string to return
+     */
     public String toString()
     {
         String faceValue = "";
